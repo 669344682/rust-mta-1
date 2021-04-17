@@ -1,5 +1,6 @@
 Database = { };
 
+Database.type = "sqlite";
 Database.user = "root";
 Database.pass = "";
 Database.database = "mta_rust";
@@ -7,7 +8,15 @@ Database.host = "localhost";
 
 function Database.setup( )
 
-	Database.connection = Connection( "mysql", "dbname=" .. Database.database .. ";host=" .. Database.host, Database.user, Database.pass );
+	if ( Database.type == "sqlite" ) then
+
+		Database.connection = Connection( Database.type, "assets/database/" .. Database.database .. "." .. Database.type );
+
+	elseif ( Database.type == "mysql" ) then
+
+		Database.connection = Connection( Database.type, "dbname=" .. Database.database .. ";host=" .. Database.host, Database.user, Database.pass );
+
+	end
 
 	if ( not Database.connection ) then
 
