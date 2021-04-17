@@ -125,6 +125,12 @@ function Inventory.giveItem( player, item, ammount, life, slot, dont_show_notifi
 
 	end
 
+	if ( not ammount ) then
+
+		ammount = 1;
+
+	end
+
 	local stackable = ITEMS[ item ].stackable;
 	local free_sloot = Inventory.getFreeSlot( player );
 
