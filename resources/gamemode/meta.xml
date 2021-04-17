@@ -2,6 +2,9 @@
 
     <info author="STR6" />
 
+    <include resource="object_preview" />
+    <include resource="bone_attach" />
+
     <oop>true</oop>
 
     <script src="shared/speed.lua" type="shared" />
