@@ -25,8 +25,8 @@ addEventHandler( "onClientResourceStart", resourceRoot,
 
 			if ( localPlayer:getData( "character > logged" ) ) then
 
-				local hunger = localPlayer:getData( "character > hunger" );
-				local thirst = localPlayer:getData( "character > thirst" );
+				local hunger = tonumber( localPlayer:getData( "character > hunger" ) );
+				local thirst = tonumber( localPlayer:getData( "character > thirst" ) );
 
 				if ( hunger ) then
 
