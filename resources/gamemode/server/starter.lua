@@ -28,6 +28,7 @@ addEventHandler( "onResourceStart", resourceRoot,
 		Inventory.setup( );
 		Building.setup( );
 		Wasted.setup( );
+		Weapons.setup( );
 
 	end
 );

@@ -14,6 +14,7 @@
     <script src="shared/spawn_positions.lua" type="shared" />
     <script src="shared/loot_positions.lua" type="shared" />
     <script src="shared/inventory.lua" type="shared" />
+    <script src="shared/weapon.lua" type="shared" />
 
     <script src="client/starter.lua" type="client" cache="false" />
 
@@ -56,6 +57,7 @@
     <script src="server/inventory/use_item.lua" type="server" />
     <script src="server/building/main.lua" type="server" />
     <script src="server/loot/main.lua" type="server" />
+    <script src="server/weapon/main.lua" type="server" />
 
     <file src="assets/fonts/regular.ttf" />
     <file src="assets/fonts/semibold.ttf" />
