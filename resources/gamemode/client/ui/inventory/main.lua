@@ -156,12 +156,12 @@ function Inventory.setup( )
 
 	Inventory.UI.rectangles[ 1 ] = Rectangles:create( INV_X + 5, INV_Y - 9, HOTBAR_W - 5, 2, { 200, 200, 200, 50 } );
 
-	Inventory.UI.radios[ 1 ] = Radios:create( INV_X + 5, INV_Y - 105, HOTBAR_W - 60, 50, 50, 100 );
-	Inventory.UI.rectangles[ 2 ] = Rectangles:create( INV_X + ( HOTBAR_W - 50 ), INV_Y - 105, 50, 50, { 200, 200, 200, 50 } );
-	Inventory.UI.images[ 1 ] = Images:create( INV_X + ( HOTBAR_W - 50 ), INV_Y - 105, 50, 50, "assets/images/null.png" );
+	Inventory.UI.radios[ 1 ] = Radios:create( INV_X + 5, INV_Y - 105, HOTBAR_W - 5, 50, 50, 100 );
+	Inventory.UI.rectangles[ 2 ] = Rectangles:create( INV_X + ( HOTBAR_W - 50 ), INV_Y - 210, 50, 50, { 200, 200, 200, 50 } );
 	Inventory.UI.rectangles[ 3 ] = Rectangles:create( INV_X + 5, INV_Y - 210, HOTBAR_W - 5, 100, { 200, 200, 200, 50 } );
+	Inventory.UI.images[ 1 ] = Images:create( INV_X + ( HOTBAR_W - 50 ), INV_Y - 210, 50, 50, "assets/images/null.png" );
+	Inventory.UI.rectangles[ 4 ] = Rectangles:create( INV_X + ( HOTBAR_W - 50 ), INV_Y - 160, 2, 0, { 131, 179, 68, 255 } );
 	Inventory.UI.description[ 1 ] = Labels:create( INV_X + 10, INV_Y - 205, HOTBAR_W - 15, 90, ITEMS[ 1 ].name .. ":\n" .. ITEMS[ 1 ].description );
-	Inventory.UI.images[ 2 ] = Images:create( INV_X + ( HOTBAR_W - 55 ), INV_Y - 205, 50, 50, "assets/images/null.png" );
 	Inventory.UI.use_button[ 1 ] = Buttons:create( INV_X + 5, INV_Y - 50, HOTBAR_W - 5, 30, "USE" );
 
 	addEventHandler( "onClientUIClick", Inventory.UI.use_button[ 1 ].source,
@@ -643,8 +643,8 @@ function Inventory.showSelectedItemPanel( bool )
 	Inventory.UI.radios[ 1 ]:setVisible( bool );
 	Inventory.UI.rectangles[ 2 ]:setVisible( bool );
 	Inventory.UI.images[ 1 ]:setVisible( bool );
-	Inventory.UI.images[ 2 ]:setVisible( bool );
 	Inventory.UI.rectangles[ 3 ]:setVisible( bool );
+	Inventory.UI.rectangles[ 4 ]:setVisible( bool );
 	Inventory.UI.description[ 1 ]:setVisible( bool );
 	Inventory.UI.use_button[ 1 ]:setVisible( bool );
 
@@ -653,7 +653,7 @@ function Inventory.showSelectedItemPanel( bool )
 		Inventory.UI.description[ 1 ]:setText( ITEMS[ Inventory.items[ Inventory.selected_item ].item ].name .. ":\n" .. ITEMS[ Inventory.items[ Inventory.selected_item ].item ].description );
 		Inventory.UI.radios[ 1 ]:setMax( Inventory.items[ Inventory.selected_item ].ammount );
 		Inventory.UI.images[ 1 ]:setImage( "assets/images/items/" .. Inventory.items[ Inventory.selected_item ].item .. ".png" );
-		Inventory.UI.images[ 2 ]:setImage( "assets/images/items/" .. Inventory.items[ Inventory.selected_item ].item .. ".png" );
+		Inventory.UI.rectangles[ 4 ]:setSize( 2, Inventory.items[ Inventory.selected_item ].item and ( ITEMS[ Inventory.items[ Inventory.selected_item ].item ].wear and ( -( ( Inventory.items[ Inventory.selected_item ].life / 100 ) * 50 ) ) or 0 ) or 0 );
 
 	end
 
