@@ -465,7 +465,7 @@ function Inventory.toggle( )
 		UI.current_panel = Inventory.is_visible and "inventory" or false;
 
 		showChat( not Inventory.is_visible );
-		showCursor( Inventory.is_visible );
+		showCursor( Inventory.is_visible, not Inventory.is_visible );
 
 		Inventory.setVisible( Inventory.is_visible );
 		Crafting.setVisible( false );
@@ -482,7 +482,7 @@ function Inventory.hide( )
 	UI.current_panel = Inventory.is_visible and "inventory" or false;
 
 	showChat( not Inventory.is_visible );
-	showCursor( Inventory.is_visible );
+	showCursor( Inventory.is_visible, not Inventory.is_visible );
 
 	Inventory.setVisible( Inventory.is_visible );
 	Crafting.setVisible( false );
