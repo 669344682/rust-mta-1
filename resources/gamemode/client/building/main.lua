@@ -12,7 +12,6 @@ Building.UI = {
 
 };
 
-Building.areaHeight = 40;
 Building.areas = {
 
 	{ x = -157.19267, y = 135.95172, z = 3.76650, r = 20, owner = nil },
@@ -172,7 +171,7 @@ function areaCollision( )
 			x = x + cos( rad( i ) ) * v.r;
 			y = y + sin( rad( i ) ) * v.r;
 
-			dxDrawLine3D( x, y, z, x, y, z + Building.areaHeight, tocolor( 0, 255, 0 ), 2 );
+			dxDrawLine3D( x, y, z, x, y, z + BUILDING_AREA_HEIGHT, tocolor( 0, 255, 0 ), 2 );
 
 		end
 
@@ -187,7 +186,7 @@ function areaCollision( )
 		x = x + cos( rad( i ) ) * 20;
 		y = y + sin( rad( i ) ) * 20;
 
-		dxDrawLine3D( x, y, z, x, y, z + Building.areaHeight, Building.isColliding( { x = localPlayer.position.x, y = localPlayer.position.y, z = localPlayer.position.z, r = 20 } ) and tocolor( 255, 255, 0 ) or tocolor( 0, 255, 255 ), 2 );
+		dxDrawLine3D( x, y, z, x, y, z + BUILDING_AREA_HEIGHT, Building.isColliding( { x = localPlayer.position.x, y = localPlayer.position.y, z = localPlayer.position.z, r = 20 } ) and tocolor( 255, 255, 0 ) or tocolor( 0, 255, 255 ), 2 );
 
 	end
 

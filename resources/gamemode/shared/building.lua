@@ -1,4 +1,7 @@
 BUILDING_SIZES = { };
+
+BUILDING_AREA_HEIGHT = 40;
+
 BUILDING_SIZES[ 1853 ] = {
 
 	x = 5,
