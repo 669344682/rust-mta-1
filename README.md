@@ -15,3 +15,4 @@ Creator - [STR6](https://github.com/STR6)
 ![Contributors](https://cdn.discordapp.com/attachments/785196718382907452/833399345474699295/contributors.png)
 
 Lyar - [Lyar](https://github.com/1Lyar)
+STR6 - [STR6](https://github.com/STR6)
