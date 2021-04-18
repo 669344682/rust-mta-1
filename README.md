@@ -1,4 +1,5 @@
 # Rust for Multi Theft Auto
+
 it's not finished, but it's a good base for those who want to make a rust gamemode
 
 ## Inventory Image
@@ -6,3 +7,5 @@ it's not finished, but it's a good base for those who want to make a rust gamemo
 
 ## Login Panel Image
 ![Login Image](https://cdn.discordapp.com/attachments/769891911770570755/832849154162163712/Captura_de_Tela_29.png)
+
+Original Gamemode Creator - ![STR6](https://github.com/STR6)
