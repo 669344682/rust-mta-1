@@ -15,6 +15,7 @@
     <script src="shared/loot_positions.lua" type="shared" />
     <script src="shared/inventory.lua" type="shared" />
     <script src="shared/weapon.lua" type="shared" />
+    <script src="shared/utils.lua" type="shared" />
 
     <script src="client/starter.lua" type="client" cache="false" />
 
