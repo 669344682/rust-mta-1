@@ -223,6 +223,9 @@ function Inventory.setup( )
 	addEventHandler( "inventory > reset_items", root, Inventory.reset );
 	addEventHandler( "onClientClick", root, Inventory.click );
 
+	addCommandHandler( "Reload weapon", Inventory.reloadWeapon );
+	bindKey( "r", "down", "Reload weapon" );
+
 end
 
 function Inventory.click( b, s )
@@ -676,6 +679,24 @@ function Inventory.getItemUsedIn( used_in, slot )
 	end
 
 	return;
+
+end
+
+function Inventory.reloadTimer( )
+
+    if ( BLOKED_TASKS[ getPedSimplestTask( localPlayer ) ] ) then
+
+        return;
+
+    end
+
+    triggerServerEvent( "inventory > reload_weapon", localPlayer );
+
+end
+
+function Inventory.reloadWeapon( )
+
+	setTimer( Inventory.reloadTimer, 50, 1 );
 
 end
 

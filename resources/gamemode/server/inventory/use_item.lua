@@ -287,8 +287,8 @@ function Inventory.reloadWeapon( player, k )
 
 				end
 
+				reloadPedWeapon( player );
 				setWeaponAmmo( player, ITEMS[ item ].mta_id, 100 );
-				setTimer( reloadPedWeapon, 1500, 1, player );
 
 			elseif ( Inventory.players[ player ].items[ weapon_data ].ammo == 0 ) then
 
