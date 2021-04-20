@@ -372,7 +372,7 @@ function Inventory.updateAmmo( player, i, ammo )
 
 end
 
-function Inventory.takeItem( player, i )
+function Inventory.takeItem( player, i, drop )
 
 	if ( ( not Inventory.players[ player ] ) or ( not Inventory.players[ player ].items ) ) then
 
@@ -380,13 +380,21 @@ function Inventory.takeItem( player, i )
 
 	end
 
-	local item = Inventory.players[ player ].items[ i ].item;
+	local x, y, z = player:getPosition( );
+	local items = Inventory.players[ player ].items[ i ];
+	local item = items.item;
 
 	local weapon_data = player:getData( "character > weapon" );
 
 	if ( weapon_data and weapon_data == i ) then
 
 		Inventory.unequipWeapon( player, true );
+
+	end
+
+	if ( type( object ) == "boolean" ) then
+
+		Loot.createLootItem( x, y, z, item, items.ammount );
 
 	end
 
