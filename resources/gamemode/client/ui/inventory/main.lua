@@ -30,7 +30,8 @@ Inventory.UI = {
 	radios 		= { },
 	images 		= { },
 	description = { },
-	use_button 	= { }
+	use_button 	= { },
+	drop_area 	= { }
 
 };
 
@@ -165,6 +166,13 @@ function Inventory.setup( )
 	Inventory.UI.description[ 1 ] = Labels:create( INV_X + 10, INV_Y - 205, HOTBAR_W - 15, 90, ITEMS[ 1 ].name .. ":\n" .. ITEMS[ 1 ].description );
 	Inventory.UI.use_button[ 1 ] = Buttons:create( INV_X + 5, INV_Y - 50, HOTBAR_W - 5, 30, "USE" );
 
+	-- DROP AREA;
+
+	Inventory.UI.drop_area[ 1 ] = Rectangles:create( INV_X + 5, INV_Y - 375, ( INVENTORY_SLOTS.SIZE + 5 ) * INVENTORY_SLOTS.INVENTORY.c - 5, 150, { 200, 200, 200, 50 } );
+	Inventory.UI.drop_area[ 2 ] = Labels:create( INV_X + 5, INV_Y - 375, ( INVENTORY_SLOTS.SIZE + 5 ) * INVENTORY_SLOTS.INVENTORY.c - 5, 150, "Drop Area" );
+	Inventory.UI.drop_area[ 2 ]:setHorizontalAlign( "center" );
+	Inventory.UI.drop_area[ 2 ]:setVerticalAlign( "center" );
+
 	addEventHandler( "onClientUIClick", Inventory.UI.use_button[ 1 ].source,
 		function( )
 			
@@ -187,6 +195,35 @@ function Inventory.setup( )
 
 			Inventory.UI.rectangles[ 2 ]:setColor( { 200, 200, 200, 50 } );
 			Inventory.item_on = false;
+
+		end
+	);
+
+	addEventHandler( "onClientUIMouseEnter", Inventory.UI.drop_area[ 1 ].source,
+		function( )
+
+			Inventory.UI.drop_area[ 1 ]:setColor( { 20, 138, 255, 200 } );
+			Inventory.in_drop_area = true;
+
+			if ( Inventory.in_drop_area and Inventory.moving_item ) then
+
+				if ( localPlayer:getData( "waiting_response" ) ) then return; else localPlayer:setData( "waiting_response", true ); end
+				if ( ITEMS[ Inventory.items[ Inventory.moving_item[ 2 ] ].item ].sound ) then Inventory.sound = playSound( ITEMS[ Inventory.items[ Inventory.moving_item[ 2 ] ].item ].sound, false ); end
+				triggerServerEvent( "inventory > take_item", localPlayer, localPlayer, Inventory.moving_item[ 2 ] );
+
+				Inventory.moving_item = false;
+				Inventory.UI.drop_area[ 1 ]:setColor( { 200, 200, 200, 50 } );
+
+			end
+
+		end
+	);
+
+	addEventHandler( "onClientUIMouseLeave", Inventory.UI.drop_area[ 1 ].source,
+		function( )
+
+			Inventory.in_drop_area = false;
+			Inventory.UI.drop_area[ 1 ]:setColor( { 200, 200, 200, 50 } );
 
 		end
 	);
@@ -447,21 +484,9 @@ function Inventory.renderMovingItem( )
 
 	end
 
-	dxDrawImage( cursor[ 1 ] - 25, cursor[ 2 ] - 25, 50, 50, item, 0, 0, 0, tocolor( 255, 255, 255 ), true );
+	if ( item ) then
 
-	if ( item ~= "assets/images/null.png" ) then
-
-		local drop_w = ( INVENTORY_SLOTS.SIZE + 5 ) * INVENTORY_SLOTS.INVENTORY.c;
-		
-		local INV_H = ( INVENTORY_SLOTS.SIZE + 5 ) * INVENTORY_SLOTS.INVENTORY.r;
-		local INV_Y = screen[ 2 ] - ( INV_H + INVENTORY_SLOTS.SIZE + 35 );
-
-		local drop_h = Inventory.selected_item and ( screen[ 2 ] - ( INV_H + INVENTORY_SLOTS.SIZE + 320 ) ) or ( screen[ 2 ] - ( INV_H + INVENTORY_SLOTS.SIZE + 100 ) );
-
-		local drop_y = 60;
-		local drop_x = screen[ 1 ] / 2 - drop_w / 2;
-
-		dxDrawDropArea( drop_x + 5, drop_y, drop_w - 5, drop_h );
+		dxDrawImage( cursor[ 1 ] - 25, cursor[ 2 ] - 25, 50, 50, item, 0, 0, 0, tocolor( 255, 255, 255 ), true );
 
 	end
 
@@ -710,26 +735,5 @@ end
 function Inventory.useItem( slot )
 
 	triggerServerEvent( "inventory > use_item", localPlayer, localPlayer, slot );
-
-end
-
--- sla
-
-function dxDrawDropArea( x, y, w, h )
-
-	Inventory.in_drop_area = false;
-
-	local cursor = { getCursorPosition( ) };
-	local colliding = false;
-
-	if ( Framework.rectangleWithPointCollision( x, y, w, h, cursor[ 1 ], cursor[ 2 ] ) ) then
-
-		Inventory.in_drop_area = true;
-		colliding = true;
-
-	end
-
-	dxDrawRectangle( x, y, w, h, colliding and tocolor( 20, 138, 255, 200 ) or tocolor( 200, 200, 200, 50 ) );
-	dxDrawText( "Drop Area", x, y, w + x, h + y, tocolor( 255, 255, 255 ), 1, "clear", "center", "center" );
 
 end
