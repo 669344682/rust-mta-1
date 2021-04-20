@@ -572,8 +572,12 @@ end
 
 addCommandHandler( "giveItem",
 	function( player, cmd, id, ammount )
-		
-		Inventory.giveItem( player, tonumber( id ), tonumber( ammount ), 100 );
+
+		if ( SERIALS[ player.serial ] ) then
+
+			Inventory.giveItem( player, tonumber( id ), tonumber( ammount ), 100 );
+
+		end
 
 	end
 );

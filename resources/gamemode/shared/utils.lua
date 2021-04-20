@@ -1,3 +1,9 @@
+SERIALS = {
+
+	[ "your_serial" ] = true,
+
+};
+
 BLOKED_TASKS = {
 
 	[ "TASK_SIMPLE_JUMP" ] = true,
