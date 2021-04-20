@@ -4,24 +4,32 @@ function Models.replace( )
 
 	for _, v in pairs( CUSTOM_MODELS ) do
 
-		if ( fileExists( v.txd ) ) then
+		if ( v.load ) then
 
-			local txd = EngineTXD( v.txd );
-			txd:import( v.model );
+			if ( fileExists( v.txd ) ) then
 
-		end
+				local txd = EngineTXD( v.txd );
+				txd:import( v.model );
 
-		if ( fileExists( v.dff ) ) then
+			end
 
-			local dff = EngineDFF( v.dff );
-			dff:replace( v.model );
+			if ( fileExists( v.dff ) ) then
 
-		end
+				local dff = EngineDFF( v.dff );
+				dff:replace( v.model );
 
-		if ( fileExists( v.col ) ) then
+			end
 
-			local col = EngineCOL( v.col );
-			col:replace( v.model );
+			if ( v.col ) then
+
+				if ( fileExists( v.col ) ) then
+
+					local col = EngineCOL( v.col );
+					col:replace( v.model );
+
+				end
+
+			end
 
 		end
 

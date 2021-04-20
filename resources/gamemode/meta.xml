@@ -4,6 +4,7 @@
 
     <include resource="object_preview" />
     <include resource="bone_attach" />
+    <include resource="defaultstats" />
 
     <oop>true</oop>
 
@@ -93,6 +94,37 @@
     <file src="assets/images/items/17.png" />
     <file src="assets/images/items/18.png" />
     <file src="assets/images/items/19.png" />
+
+    <file src="assets/sounds/rocks.mp3" />
+    <file src="assets/sounds/trunk_open.mp3" />
+    <file src="assets/sounds/trunk_is_close.mp3" />
+    <file src="assets/sounds/trunk_close.mp3" />
+    <file src="assets/sounds/bandage.mp3" />
+    <file src="assets/sounds/seeds.mp3" />
+    <file src="assets/sounds/iron.mp3" />
+    <file src="assets/sounds/hover.mp3" />
+    <file src="assets/sounds/food.mp3" />
+    <file src="assets/sounds/cloth.mp3" />
+    <file src="assets/sounds/door.mp3" />
+
+    <file src="assets/sounds/weapons/ak.wav" />
+    <file src="assets/sounds/weapons/bolt.wav" />
+    <file src="assets/sounds/weapons/double_barreled.wav" />
+    <file src="assets/sounds/weapons/grenade_launcher.wav" />
+    <file src="assets/sounds/weapons/l96.wav" />
+    <file src="assets/sounds/weapons/lr-300.wav" />
+    <file src="assets/sounds/weapons/m39.wav" />
+    <file src="assets/sounds/weapons/m92.wav" />
+    <file src="assets/sounds/weapons/m249.wav" />
+    <file src="assets/sounds/weapons/mp5.wav" />
+    <file src="assets/sounds/weapons/pump.wav" />
+    <file src="assets/sounds/weapons/python.wav" />
+    <file src="assets/sounds/weapons/revolver.wav" />
+    <file src="assets/sounds/weapons/sentry.wav" />
+    <file src="assets/sounds/weapons/sentry-no-ammo.wav" />
+    <file src="assets/sounds/weapons/smg.wav" />
+    <file src="assets/sounds/weapons/spas.wav" />
+    <file src="assets/sounds/weapons/thompson.wav" />
 
     <file src="assets/models/build/texture.txd" />
 

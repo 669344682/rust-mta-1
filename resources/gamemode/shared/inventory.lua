@@ -6,6 +6,7 @@ INVENTORY_SLOTS = { INVENTORY = { r = 5, c = 6 }, CLOTHES = 6, SIZE = 45 };
 
 	name 			= string,
 	description 	= string,
+	sound 			= file,
 	stackable 		= boolean,
 	weapon 			= boolean,
 	ammo_id 		= boolean,
@@ -27,6 +28,7 @@ ITEMS = {
 
 		name 		= "Apple",
 		description = "Food",
+		sound 		= "assets/sounds/cloth.mp3",
 		stackable 	= true,
 		food 		= true,
 		hunger 		= 3,
@@ -38,7 +40,8 @@ ITEMS = {
 
 		name 		= "Construction Plan",
 		description = "Construction",
-		stackable 	= true
+		sound 		= "assets/sounds/cloth.mp3",
+		stackable 	= false
 
 	},
 
@@ -46,6 +49,7 @@ ITEMS = {
 
 		name 			= "AK-47",
 		description 	= "Weapon",
+		sound 			= "assets/sounds/iron.mp3",
 		weapon 			= true,
 		ammo_id 		= 4,
 		wear	 		= true,
@@ -59,6 +63,7 @@ ITEMS = {
 	[ 4 ] = {
 
 		name 		= "5.56 Ammo",
+		sound 		= "assets/sounds/iron.mp3",
 		description = "Ammo",
 		stackable 	= true
 
@@ -68,6 +73,7 @@ ITEMS = {
 
 		name 		= "Blue Shirt",
 		description = "Roupa",
+		sound 		= "assets/sounds/cloth.mp3",
 		clothes 	= { 4 }
 
 	},
@@ -76,6 +82,7 @@ ITEMS = {
 
 		name 		= "Green Shirt",
 		description = "Clothe",
+		sound 		= "assets/sounds/cloth.mp3",
 		clothes 	= { 4 }
 
 	},
@@ -84,6 +91,7 @@ ITEMS = {
 
 		name 		= "Boot",
 		description = "Clothe",
+		sound 		= "assets/sounds/cloth.mp3",
 		clothes 	= { 6 }
 
 	},
@@ -92,6 +100,7 @@ ITEMS = {
 
 		name 		= "Balaclava",
 		description = "Clothe",
+		sound 		= "assets/sounds/cloth.mp3",
 		clothes 	= { 2 }
 
 	},
@@ -100,6 +109,7 @@ ITEMS = {
 
 		name 		= "Armor",
 		description = "Protection",
+		sound 		= "assets/sounds/iron.mp3",
 		wear 		= true,
 		clothes 	= { 3 }
 
@@ -109,6 +119,7 @@ ITEMS = {
 
 		name 		= "Jeans Legs",
 		description = "Clothe",
+		sound 		= "assets/sounds/cloth.mp3",
 		clothes 	= { 5 }
 
 	},
@@ -117,6 +128,7 @@ ITEMS = {
 
 		name 		= "Helmet",
 		description = "Protection",
+		sound 		= "assets/sounds/iron.mp3",
 		wear 		= true,
 		clothes 	= { 1 }
 
@@ -126,6 +138,7 @@ ITEMS = {
 
 		name 			= "Pistol",
 		description 	= "Weapon",
+		sound 			= "assets/sounds/iron.mp3",
 		weapon 			= true,
 		ammo_id 		= 13,
 		wear	 		= true,
@@ -140,6 +153,7 @@ ITEMS = {
 
 		name 		= "Pistol Ammo",
 		description = "Ammo",
+		sound 		= "assets/sounds/iron.mp3",
 		stackable 	= true
 
 	},
@@ -148,6 +162,7 @@ ITEMS = {
 
 		name 		= "Hammer",
 		description = "Up/remove constructions",
+		sound 		= "assets/sounds/cloth.mp3",
 		mta_id 		= 11,
 		stackable 	= true
 
@@ -157,6 +172,7 @@ ITEMS = {
 
 		name 		= "Pickaxe",
 		description = "Pickaxe",
+		sound 		= "assets/sounds/iron.mp3",
 		wear 		= true,
 		mta_id 		= 10
 
@@ -166,6 +182,7 @@ ITEMS = {
 
 		name 		= "Axe",
 		description = "Axe",
+		sound 		= "assets/sounds/iron.mp3",
 		wear 		= true,
 		mta_id 		= 12
 
@@ -175,6 +192,7 @@ ITEMS = {
 
 		name 		= "Wood",
 		description = "Wood",
+		sound 		= "assets/sounds/cloth.mp3",
 		stackable 	= true
 
 	},
@@ -183,6 +201,7 @@ ITEMS = {
 
 		name 		= "Rock",
 		description = "Rock",
+		sound 		= "assets/sounds/rocks.mp3",
 		stackable 	= true
 
 	},
@@ -191,6 +210,7 @@ ITEMS = {
 
 		name 		= "Scrap",
 		description = "Scrap",
+		sound 		= "assets/sounds/iron.mp3",
 		stackable 	= true
 
 	},

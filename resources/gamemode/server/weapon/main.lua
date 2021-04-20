@@ -14,13 +14,13 @@ function Weapons.propertys( )
 
 		if ( v ) then
 
-			for k in pairs( v.Propertys ) do
+			for k in pairs( v.propertys ) do
 
-				local w = v.Propertys[ k ];
+				local w = v.propertys[ k ];
 
 				if ( k ) then
 
-					setWeaponProperty( i, v.Skill, k, w );
+					setWeaponProperty( i, v.skill, k, w );
 
 				end
 

@@ -6,9 +6,10 @@
 
 		[ id int ] = table{
 
-			Skill = string,
+			skill = string,
+			sound = string,
 
-			Propertys = table{
+			propertys = table{
 
 				[ value string ] = value,
 
@@ -24,9 +25,10 @@ WEAPONS = {
 
 	[ 30 ] = {
 
-		Skill = "poor",
+		skill = "poor",
+		sound = "assets/sounds/weapons/ak.wav",
 
-		Propertys = { 
+		propertys = { 
 
 			[ "weapon_range" ] = 150,
 			[ "damage" ] = 30,

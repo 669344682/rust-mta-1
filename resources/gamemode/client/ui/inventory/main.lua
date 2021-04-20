@@ -15,6 +15,7 @@ Inventory.moving_item = false;
 Inventory.click_ms = 0;
 Inventory.block_event = false;
 Inventory.in_drop_area = false;
+Inventory.sound = nil;
 
 Inventory.items = false;
 
@@ -279,6 +280,12 @@ function Inventory.click( b, s )
 			if ( Inventory.moving_item ) then
 
 				if ( Inventory.item_on ) then
+
+					if ( ITEMS[ Inventory.items[ Inventory.moving_item[ 2 ] ].item ].sound ) then
+
+						Inventory.sound = playSound( ITEMS[ Inventory.items[ Inventory.moving_item[ 2 ] ].item ].sound, false );
+
+					end
 
 					if ( Inventory.moving_item[ 1 ] == "selected_item" ) then
 
